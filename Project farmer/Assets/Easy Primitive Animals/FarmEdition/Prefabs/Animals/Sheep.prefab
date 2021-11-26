@@ -666,7 +666,7 @@ MonoBehaviour:
   RearLegL: {fileID: 0}
   RearLegR: {fileID: 0}
   moveAngle: 90
-  movSpeed: 0.2
+  movSpeed: 1
 --- !u!114 &2508182371718532105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,6 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffeb5523b9b18b34e83203d21a7a3aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 3
 --- !u!1 &2692594753769500436
 GameObject:
   m_ObjectHideFlags: 0
