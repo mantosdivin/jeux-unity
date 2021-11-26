@@ -10,4 +10,4 @@ third camera;
 # 
 for catch/deposit a sheep = 'e'
 #
-Url + https://mantosdivin.github.io/jeux-unity/Project%20farmer/Build/
+Url = https://mantosdivin.github.io/jeux-unity/Project%20farmer/Build/
