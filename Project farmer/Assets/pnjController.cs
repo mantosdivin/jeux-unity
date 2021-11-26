@@ -5,7 +5,7 @@ using UnityEngine;
 public class pnjController : MonoBehaviour
 {
     public GameObject listSheep;
-    public float speed = 1;
+    public float speed = 2;
 
     // Update is called once per frame
     void Update()
