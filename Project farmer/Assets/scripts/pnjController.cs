@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class pnjController : MonoBehaviour
 {
     public GameObject listSheep;
     private Animator animator;
     private AudioSource SoundSheep;
     public TextMeshProUGUI scoreWolfText;
+    public TirdPersonMoovement tirdPersonMoovement;
     public float speed = 0f;
     public int score;
     void Start()
@@ -21,22 +23,25 @@ public class pnjController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int nbSheep = listSheep.transform.childCount;
-        //Debug.Log("nbSheep = " + nbSheep);
-        float minDistance = 100000f;
-        Vector3 minPosSheep = Vector3.zero;
-        for (int i = 0; i <nbSheep; i++)
+        if (tirdPersonMoovement.isGameActive)
         {
-            float dist = Vector3.Distance(this.transform.position, listSheep.transform.GetChild(i).transform.position);
-            if (dist < minDistance)
+            int nbSheep = listSheep.transform.childCount;
+            Debug.Log("nbSheep = " + nbSheep);
+            float minDistance = 100000f;
+            Vector3 minPosSheep = Vector3.zero;
+            for (int i = 0; i <nbSheep; i++)
             {
-                minDistance = dist;
-                minPosSheep = listSheep.transform.GetChild(i).transform.position;
+                float dist = Vector3.Distance(this.transform.position, listSheep.transform.GetChild(i).transform.position);
+                if (dist < minDistance)
+                {
+                    minDistance = dist;
+                    minPosSheep = listSheep.transform.GetChild(i).transform.position;
                 
+                }   
             }
+            transform.position = Vector3.MoveTowards(transform.position, minPosSheep, speed * Time.deltaTime);
+            transform.LookAt(minPosSheep);
         }
-        transform.position = Vector3.MoveTowards(transform.position, minPosSheep, speed * Time.deltaTime);
-        transform.LookAt(minPosSheep);
     }
     private void OnCollisionEnter(Collision collision)
     {

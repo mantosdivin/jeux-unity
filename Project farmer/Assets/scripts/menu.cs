@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class menu : MonoBehaviour
 {
-    public void NewScenes1 (string Easy)
+    public void EasyButton(string Easy)
     {
         SceneManager.LoadScene(Easy);
     }
-    public void NewScenes2 (string Normal)
+    public void MediumButton(string Medium)
     {
-        SceneManager.LoadScene(Normal);
+        SceneManager.LoadScene(Medium);
     }
-    public void NewScenes3(string Hard)
+    public void HardButton(string Hard)
     {
         SceneManager.LoadScene(Hard);
     }
