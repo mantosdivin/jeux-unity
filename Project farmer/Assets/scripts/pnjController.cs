@@ -45,7 +45,7 @@ public class pnjController : MonoBehaviour
             SoundSheep.Play();
             animator.Play("Wolf_Attack");
             UpdateScore(5);
-            Destroy(collision.gameObject, 1);
+            Destroy(collision.gameObject);
         }
     }
     private void UpdateScore(int scoreToAdd)

@@ -15,6 +15,7 @@ public class TirdPersonMoovement : MonoBehaviour
     public GameObject listSheep;
     public pnjController pnjController;
     public validationSheep validationSheep;
+    public Timer timer;
     public float speed = 10f;
     public float turnSmoothTime = 0.1f;
     public float gravity = -9.81f;
@@ -66,7 +67,7 @@ public class TirdPersonMoovement : MonoBehaviour
                     if (hit.collider.gameObject.CompareTag("Sheep"))
                     {
                         hit.collider.gameObject.transform.SetParent(this.transform);
-                        hit.collider.gameObject.GetComponent<AnimalController>().enabled = false;
+                        hit.collider.gameObject.GetComponent<AnimalDepAlea>().enabled = false;
                         beingCarried = true;    
                         timeKeep = Time.realtimeSinceStartup;
                     }
@@ -77,7 +78,7 @@ public class TirdPersonMoovement : MonoBehaviour
         } else if (Input.GetKeyDown(KeyCode.E) && beingCarried && timeKeep < Time.realtimeSinceStartup + 0.1f)
         {
             //Debug.Log("Touche");
-            this.transform.GetChild(1).GetComponent<AnimalController>().enabled = true;
+            this.transform.GetChild(1).GetComponent<AnimalDepAlea>().enabled = true;
             this.transform.GetChild(1).transform.parent = null;
             beingCarried = false;
             timeKeep = Time.realtimeSinceStartup;
@@ -89,12 +90,13 @@ public class TirdPersonMoovement : MonoBehaviour
             beingCarried = false;
         }
         GameOver();
+        Winner();
     }
     public void GameOver()
     {
         int nbSheep = listSheep.transform.childCount;
         Debug.Log("nbSheep = " + nbSheep);
-        if (nbSheep == 0 && pnjController.score >= validationSheep.score)
+        if ((nbSheep == 0 && pnjController.score > validationSheep.score) || (timer.timeValue == 0 && pnjController.score > validationSheep.score))
         {
             gameOverText.gameObject.SetActive(true);
         }
@@ -102,7 +104,7 @@ public class TirdPersonMoovement : MonoBehaviour
     public void Winner()
     {
         int nbSheep = listSheep.transform.childCount;
-        if (nbSheep == 0 && pnjController.score < validationSheep.score)
+        if (nbSheep == 0 && pnjController.score <= validationSheep.score || (timer.timeValue == 0 && pnjController.score <= validationSheep.score))
         {
             WinnerText.gameObject.SetActive(true);
         }
