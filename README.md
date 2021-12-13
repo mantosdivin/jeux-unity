@@ -12,3 +12,5 @@ third camera;
 for catch/deposit a sheep = 'e'
 #
 Url = https://mantosdivin.github.io/jeux-unity/Project%20farmer/Build/
+#
+Asset - Credits : Cutisbest, Bit Gamey, Vertex Cat, Broken Vector, A dog's life software
