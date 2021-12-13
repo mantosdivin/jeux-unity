@@ -17,7 +17,7 @@ public class pnjController : MonoBehaviour
     void Start()
     {
         score = 0;
-        speed = menu.diffitculty * 2;
+        speed = menu.diffitculty * 1;
         UpdateScore(0);
         animator = GetComponent<Animator>();
         SoundSheep = GetComponent<AudioSource>();

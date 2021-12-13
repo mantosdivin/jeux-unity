@@ -23,12 +23,12 @@ public class menu : MonoBehaviour
     }
     public void MediumButton(string Medium)
     {
-        diffitculty = 3;
+        diffitculty = 4;
         SceneManager.LoadScene(Medium);
     }
     public void HardButton(string Hard)
     {
-        diffitculty = 4;
+        diffitculty = 6;
         SceneManager.LoadScene(Hard);
     }
     public Text Titre = null;
