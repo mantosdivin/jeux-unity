@@ -11,14 +11,17 @@ public class pnjController : MonoBehaviour
     private AudioSource SoundSheep;
     public TextMeshProUGUI scoreWolfText;
     public TirdPersonMoovement tirdPersonMoovement;
+    //public menu menu;
     public float speed = 0f;
     public int score;
     void Start()
     {
         score = 0;
+        speed = menu.diffitculty * 2;
         UpdateScore(0);
         animator = GetComponent<Animator>();
         SoundSheep = GetComponent<AudioSource>();
+
     }
     // Update is called once per frame
     void Update()

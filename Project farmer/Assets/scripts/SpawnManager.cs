@@ -8,6 +8,7 @@ public class SpawnManager : MonoBehaviour
     private float spawnRangeX = 20;
     private float spawnRangeZ = 20;
     public Transform listSheep;
+    private int numberSheep = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,8 @@ public class SpawnManager : MonoBehaviour
     }
     public void spawnSheep()
     {
-        for(int i = 0; i < 20; i++)
+        numberSheep = menu.diffitculty * 5;
+        for(int i = 0; i < numberSheep; i++)
         {
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, Random.Range(-spawnRangeZ, spawnRangeZ));
             Quaternion aleaRotate = new Quaternion(0, Random.Range(0, 360), 0, 360);
