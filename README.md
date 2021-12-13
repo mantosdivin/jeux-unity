@@ -1,6 +1,7 @@
 # jeux-unity
 
-A werewolf eats the sheep the goal is in save the most by putting them in the barn; 
+The goal of the game is to save as many sheep as possible by bringing them into the barn. 
+You are in competition with the wolf, whoever has the most points wins the game.
 # 
 deplacement = 
  'q' = left
